@@ -3,6 +3,11 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  server: { allowedHosts: true },
+  server: {
+    allowedHosts: true,
+    proxy: {
+      '/api': 'http://localhost:8080',
+    },
+  },
   plugins: [react()],
 })
